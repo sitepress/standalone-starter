@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <title><%= current_page.data.fetch("title") %></title>
+    <%= stylesheet_link_tag "tailwind" %>
+  </head>
+  <body>
+    <%= yield %>
+  </body>
+</html>

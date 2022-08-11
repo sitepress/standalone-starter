@@ -1,0 +1,35 @@
+---
+title: My Website
+posts: 10
+primary_page:
+  title: Home
+  order: 1
+---
+
+<div class="posts">
+  <h2 class="text-xl font-semibold">Articles</h2>
+  <% ArticlePage.published.take(current_page.data.fetch("posts", 10)).each do |post| %>
+    <div class="post flex flex-column flex-nowrap justify-between">
+      <div class="post-title">
+        <%=link_to_page post %>
+      </div>
+      <div class="post-date opacity-50">
+        <%= post.publish_at.strftime("%B %-d, %Y") %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<div class="mt-12">
+  <h2 class="text-xl font-semibold">Projects</h2>
+  <% site.glob("projects/{[!index]*}.html.*").each do |project| %>
+    <div class="project flex flex-row flex-nowrap justify-between">
+      <div class="project-title">
+        <%= link_to_page project %>
+      </div>
+      <div class="project-description">
+        TODO
+      </div>
+    </div>
+  <% end %>
+</div>
