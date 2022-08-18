@@ -28,3 +28,5 @@ gem "chronic", "~> 0.10.2"
 
 # Get content live-ish from websites, like Github repo projects.
 gem "http.rb", "~> 0.12.0"
+
+gem "redcarpet", "~> 3.5"
