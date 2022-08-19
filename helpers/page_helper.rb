@@ -26,4 +26,16 @@ module PageHelper
   def render_github_readme(url)
     render inline: github_readme(url), type: :markdown
   end
+
+  def order_pages(pages)
+    pages.sort_by { |r| r.data.fetch("order", Float::INFINITY) }
+  end
+
+  def order_glob(glob)
+    order_pages site.resources.glob(glob).select{ |r| r.data.has_key? "title" }
+  end
+
+  def partial(path, **locals)
+    render partial: path, locals: locals
+  end
 end

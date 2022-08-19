@@ -4,7 +4,8 @@ module.exports = {
     "./pages/**/*.*",
     "./models/**/*.*",
     "./helpers/**/*.*",
-    "./layouts/**/*.*"
+    "./layouts/**/*.*",
+    "./partials/**/*.*"
   ],
   theme: {
     extend: {},
