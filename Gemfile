@@ -19,7 +19,6 @@ gem "webrick"
 # Templating engines. Under the hood Sitepress uses a slimmed
 # down Rails, so rails templating engines should mostly work.
 gem "haml-rails"
-gem "sass-rails"
 gem "markdown-rails"
 gem "slim-rails"
 
