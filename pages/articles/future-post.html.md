@@ -1,7 +1,8 @@
 ---
-title: Greetings 1 year from now
+title: Greetings in the future
+subitle: I hope you're doing swell!
 publish_at: 1 year from now
 layout: post
 ---
 
-Hi! Change `publish_at` to `1 year ago` and you'll see it get published :-)
+Hello, this is a post from the future! I hope this finds you well and the past treated you kindly.

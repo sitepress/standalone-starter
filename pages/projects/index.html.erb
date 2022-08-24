@@ -1,8 +1,20 @@
 ---
 title: Projects
+subtitle: Things I'm working on
 primary_page:
   name: Projects
   order: 3
 ---
 
-<p> All projects...</p>
+<section class="posts flex flex-col space-y-4">
+  <div class="projects flex flex-col space-y-4">
+    <% ProjectPage.all.each do |project| %>
+      <div class="project">
+        <%= link_to_page project, class: "project-title" %>
+        <div class="project-description opacity-60">
+          <%= project.subtitle %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</section>

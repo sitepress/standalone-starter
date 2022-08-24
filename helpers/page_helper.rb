@@ -1,6 +1,6 @@
 module PageHelper
-  def link_to_page(page)
-    link_to page.data.fetch("title", page.request_path), page.request_path
+  def link_to_page(page, **kwargs)
+    link_to page.data.fetch("title", page.request_path), page.request_path, **kwargs
   end
 
   def link_to_if_current(text, page, active_class: "active")
@@ -13,6 +13,10 @@ module PageHelper
 
   def github_readme_url(url)
     "https://raw.githubusercontent.com/#{URI(url).path}/main/README.md"
+  end
+
+  def date(value)
+    Chronic.parse(value)
   end
 
   def remote_content(url)

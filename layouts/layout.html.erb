@@ -1,16 +1,18 @@
 <%= render_layout "body" do %>
-  <header class="max-w-2xl m-6 mt-12 md:mx-auto my-24">
-    <h1 class="text-3xl font-bold"><%= current_page.data.fetch("title") %></h1>
-    <% if subtitle = current_page.data["subtitle"] %>
-      <h2 class="text-2xl opacity-50"><%= subtitle %></h2>
-    <% end %>
-  </header>
-  <main class="max-w-2xl m-6 md:mx-auto my-24">
-    <%= yield %>
-  </main>
-  <footer class="max-w-2xl m-6 mb-12 md:mx-auto my-24">
-    <% PrimaryPage.all.each do |page| %>
-      <%= link_to page.title, page.request_path %>
-    <% end %>
-  </footer>
+  <div class="max-w-xl md:mx-auto flex flex-col gap-y-10 my-10 md:gap-y-20 md:my-20 p-4">
+    <header>
+      <h1 class="text-4xl font-bold"><%= current_page.data.fetch("title") %></h1>
+      <% if subtitle = current_page.data["subtitle"] %>
+        <h2 class="text-xl opacity-50 mt-2"><%= subtitle %></h2>
+      <% end %>
+    </header>
+    <main class="">
+      <%= yield %>
+    </main>
+    <footer class="flex flex-row gap-x-6">
+      <% PrimaryPage.all.each do |page| %>
+        <%= link_to page.title, page.request_path %>
+      <% end %>
+    </footer>
+  </div>
 <% end %>

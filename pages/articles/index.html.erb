@@ -1,8 +1,18 @@
 ---
 title: Articles
+subtitle: Thoughts, ideas, and other musings I've written about over the years
 primary_page:
   name: Articles
   order: 2
 ---
 
-<p> All blog posts...</p>
+<section class="posts flex flex-col space-y-4">
+  <% ArticlePage.published.each do |post| %>
+    <div class="post flex flex-col md:flex-row flex-nowrap justify-between">
+      <%=link_to_page post, class: "post-title" %>
+      <div class="post-date opacity-60">
+        <%= post.publish_at.strftime("%B %-d, %Y") %>
+      </div>
+    </div>
+  <% end %>
+</section>

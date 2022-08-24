@@ -1,5 +1,9 @@
 <%= render_layout "layout" do %>
-  <div class="prose">
+  <div class="prose dark:prose-invert">
     <%= yield %>
+    <% if publish_at = date(current_page.data["publish_at"]) %>
+      <hr>
+      <p>This post was published <%= publish_at.to_s(:long_ordinal) %><p>
+    <% end %>
   </div>
 <% end %>

@@ -6,30 +6,30 @@ primary_page:
   order: 1
 ---
 
-<div class="posts">
-  <h2 class="text-xl font-semibold">Articles</h2>
-  <% ArticlePage.published.take(current_page.data.fetch("posts", 10)).each do |post| %>
-    <div class="post flex flex-column flex-nowrap justify-between">
-      <div class="post-title">
-        <%=link_to_page post %>
+<div class="flex flex-col space-y-10 md:space-y-16">
+  <section class="posts flex flex-col space-y-4">
+    <h2 class="text-2xl font-bold">Articles</h2>
+    <% ArticlePage.published.each do |post| %>
+      <div class="post flex flex-col md:flex-row flex-nowrap justify-between">
+        <%=link_to_page post, class: "post-title" %>
+        <div class="post-date opacity-60">
+          <%= post.publish_at.strftime("%B %-d, %Y") %>
+        </div>
       </div>
-      <div class="post-date opacity-50">
-        <%= post.publish_at.strftime("%B %-d, %Y") %>
-      </div>
-    </div>
-  <% end %>
-</div>
+    <% end %>
+  </section>
 
-<div class="mt-12">
-  <h2 class="text-xl font-semibold">Projects</h2>
-  <% site.glob("projects/{[!index]*}.html.*").each do |project| %>
-    <div class="project flex flex-row flex-nowrap justify-between">
-      <div class="project-title">
-        <%= link_to_page project %>
-      </div>
-      <div class="project-description">
-        TODO
-      </div>
+  <section class="posts flex flex-col space-y-4">
+    <h2 class="text-2xl font-bold">Projects</h2>
+    <div class="projects flex flex-col space-y-4">
+      <% ProjectPage.all.each do |project| %>
+        <div class="project">
+          <%= link_to_page project, class: "project-title" %>
+          <div class="project-description opacity-60">
+            <%= project.subtitle %>
+          </div>
+        </div>
+      <% end %>
     </div>
-  <% end %>
+  </section>
 </div>

@@ -1,0 +1,16 @@
+---
+title: How to show the future post
+publish_at: August 24, 2022
+subtitle: There's a file you need to edit for this demo
+layout: post
+---
+
+<% future_post = site.resources.get("articles/future-post") %>
+
+<p>To see a demo for the future post showing, you'll need to:</p>
+
+<ol>
+  <li>Open the file at  <code><%= future_post.asset.path %></code></li>
+  <li>Change the date from <code><%= future_post.data.fetch("publish_at") %></code> to something in the near future, like 10 minutes from now: <code><%= 10.minutes.from_now.to_s(:long) %></code></li>
+  <li>Save the file, then wait for the publish date and time to pass, refresh the site, and you'll see the post.</li>
+</ol>
