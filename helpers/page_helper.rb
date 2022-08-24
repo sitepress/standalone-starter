@@ -1,3 +1,5 @@
+require "open-uri"
+
 module PageHelper
   def link_to_page(page, **kwargs)
     link_to page.data.fetch("title", page.request_path), page.request_path, **kwargs
@@ -20,7 +22,7 @@ module PageHelper
   end
 
   def remote_content(url)
-    HTTP.get(url).body
+    URI.open(url).read
   end
 
   def github_readme(url)
