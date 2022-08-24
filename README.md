@@ -2,13 +2,30 @@
 
 Welcome to your new Sitepress site! If you know Rails, you'll feel right at home in Sitepress because it's built on top of Rails. There's a few things you'll need to know to get around:
 
+## Installation
+
+This starter website ships with TailwindCSS and Sitepress, which requires running multiple processes in development via [Foreman](https://github.com/ddollar/foreman) or [overmind](https://github.com/DarthSim/overmind).
+
+Install dependencies by running:
+
+```cmd
+$ bundle
+$ yarn
+```
+
 ## Starting the preview server
 
-First thing you'll want to do is start the preview server:
+First thing you'll want to do is start the preview server. If you're using Overmind, run:
 
 ```sh
-$ sitepress server
+$ overmind start -f Procfile.dev
 ```
+
+or if you're using Foreman, run:
+
+```sh
+$ foreman start -f Procfile.dev
+````
 
 Then open http://127.0.0.1:8080 and you'll see the welcome page.
 
