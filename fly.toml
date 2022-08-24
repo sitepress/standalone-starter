@@ -6,13 +6,9 @@ kill_timeout = 5
 processes = []
 
 [build]
-  [build.args]
-    BUNDLER_VERSION = "2.3.16"
-    NODE_VERSION = "14"
-    RUBY_VERSION = "3.1.1"
+  dockerfile = "Dockerfile"
 
 [deploy]
-  # release_command = "bundle exec rails db:migrate"
 
 [env]
   PORT = "8080"
