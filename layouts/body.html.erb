@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html class="dark:text-slate-200 dark:bg-slate-900">
   <head>
-    <meta charset='utf-8'>
+    <meta charset=utf-8>
+    <meta name = "viewport" content = "width = device-width">
     <title><%= current_page.data.fetch("title") %></title>
     <%= stylesheet_link_tag "tailwind" %>
   </head>
-  <body class="dark:text-slate-100 dark:bg-slate-800">
+  <body>
     <%= yield %>
   </body>
 </html>
