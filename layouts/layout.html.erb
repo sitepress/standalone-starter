@@ -1,20 +1,20 @@
 <%= render_layout "body" do %>
-  <main class="mx-auto grid grid-cols-1 gap-y-16 py-16 px-8">
-    <header>
+  <main class="mx-auto grid grid-cols-1 gap-y-16 py-16 px-8 md:grid-cols-2">
+    <header class="md:col-start-2 order-1 md:order-1">
       <h1 class="text-5xl font-bold"><%= current_page.data["title"] %></h1>
       <% if subtitle = current_page.data["subtitle"] %>
         <h2 class="text-2xl opacity-50"><%= subtitle %></h2>
       <% end %>
     </header>
-    <article class="prose dark:prose-invert max-w-none">
+    <article class="prose dark:prose-invert max-w-none order-2 md:order-3">
       <%= yield %>
     </article>
-    <nav class="flex flex-col space-y-8">
+    <nav class="flex flex-col space-y-8 order-3 md:order-2">
       <%= partial "partials/menu", title: "Getting Started", glob: "getting-started/*.html*" %>
       <%= partial "partials/menu", title: "Documentation", glob: "basics/*.html*" %>
       <%= partial "partials/menu", title: "Project", glob: "project/*.html*" %>
     </nav>
-    <footer>
+    <footer class="order-5 md:order-4">
       <%= link_to "/" do %>
         <%= image_tag "logo-brown.svg", class: "max-w-[8rem] block dark:hidden" %>
         <%= image_tag "logo-white.svg", class: "max-w-[8rem] hidden dark:block" %>
