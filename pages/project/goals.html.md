@@ -1,5 +1,6 @@
 ---
 title: Goals
+subtitle: The context, intent, and philospophy of Sitepress
 ---
 
 Sitepress is a fast, embeddable website manager that can be used in both dynamic applications, like a Rails app, or as a stand-alone static site generator.

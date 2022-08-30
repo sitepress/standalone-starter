@@ -1,5 +1,6 @@
 ---
 title: Models
+subtitle: Wrap pages in custom Ruby classes and treat them as objects
 order: 5
 ---
 

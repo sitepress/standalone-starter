@@ -1,5 +1,6 @@
 ---
 title: Rails
+subtitle: Frontmatter, site traversal, & site generator features in Rails
 order: 1
 ---
 

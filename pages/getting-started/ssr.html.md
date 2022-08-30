@@ -1,5 +1,6 @@
 ---
-title: Rack
+title: Semi-Static
+subtitle: Deploy server-side rendered Sitepress websites
 order: 3
 ---
 
