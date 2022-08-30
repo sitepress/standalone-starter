@@ -1,5 +1,5 @@
 ## Example deployment script to an Amazon Web Servie S3 bucket.
-s3_bucket_name = "<replace-with-your-bucket-name>"
+s3_bucket_name = "sitepress.cc"
 
 desc "Remove all files from the build directory"
 task :clean do

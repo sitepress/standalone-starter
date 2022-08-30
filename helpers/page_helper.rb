@@ -18,6 +18,10 @@ module PageHelper
     HTTP.get(url).body
   end
 
+  def render_remote_markdown(url)
+    render inline: remote_content(url), type: :markdown
+  end
+
   def github_readme(url)
     remote_content github_readme_url url
   end

@@ -28,3 +28,5 @@ gem "chronic", "~> 0.10.2"
 gem "http.rb", "~> 0.12.0"
 
 gem "redcarpet", "~> 3.5"
+
+gem "nokogiri", "~> 1.13"
