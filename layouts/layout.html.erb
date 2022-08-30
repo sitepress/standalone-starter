@@ -1,7 +1,7 @@
 <%= render_layout "body" do %>
-  <main class="mx-auto grid grid-cols-1 gap-y-16 md:gap-y-24 py-16 md:py-24 px-4 md:px-16 md:gap-x-16 md:grid-cols-[max-content_1fr]">
+  <main class="grid grid-cols-1 gap-y-16 md:gap-y-24 py-16 md:py-24 px-4 md:px-16 md:gap-x-16 md:grid-cols-[max-content_minmax(0,_1fr)]">
     <header class="md:col-start-2 order-1 md:order-1">
-      <h1 class="text-5xl font-bold"><%= current_page.data["title"] %></h1>
+      <h1 class="text-5xl font-bold text-brown-900 dark:text-white"><%= current_page.data["title"] %></h1>
       <% if subtitle = current_page.data["subtitle"] %>
         <h2 class="text-2xl opacity-50"><%= subtitle %></h2>
       <% end %>

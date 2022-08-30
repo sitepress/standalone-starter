@@ -3,12 +3,11 @@ module PageHelper
     link_to page.data.fetch("title", page.request_path), page.request_path
   end
 
-  def link_to_if_current(text, page, active_class: "active")
+  def link_to_if_current(text, page, **kwargs)
     if page == current_page
-      link_to text, page.request_path, class: active_class
-    else
-      link_to text, page.request_path
+      kwargs[:class] = kwargs[:active_class]
     end
+    link_to text, page.request_path, **kwargs
   end
 
   def github_readme_url(url)
